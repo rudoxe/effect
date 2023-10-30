@@ -9,8 +9,8 @@ function handleChange(e){
     return (
         <>
         <ul>
-    <li>{props.userId}</li>
-    <li>{props.id}</li>
+    <li>userID: {props.userId}</li>
+    <li>ID: {props.id}</li>
     <li>{props.title}</li>
         <li>
         <input type="checkbox" checked={completed} onChange = {handleChange}></input></li>
