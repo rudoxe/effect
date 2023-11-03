@@ -1,14 +1,15 @@
 import ToDo from "./ToDo";
 import { useEffect, useState } from "react";
+import Comment from "./Comment";
 
 function App() {
   const [todo, setTodo] = useState({});
   const [loading, setLoading] = useState(true);
-
+  const [comment, setComment] = useState({});
   useEffect(() => {
     console.log("Bonjour");
     async function getData() {
-      const response = await fetch("https://jsonplaceholder.typicode.com/todos/4");
+      const response = await fetch("https://jsonplaceholder.typicode.com/todos/53");
       const data = await response.json();
     console.log(data);
     setTodo(data);
@@ -27,6 +28,8 @@ function App() {
     <div className="App">
       <h1>bonjour</h1>
     {loading ? <p>Ladejas...</p> : <ToDo {...todo} />}
+    {loading ? <p>Ladejas...</p> : <Comment {...comment} />}
+
     </div>
 
     
